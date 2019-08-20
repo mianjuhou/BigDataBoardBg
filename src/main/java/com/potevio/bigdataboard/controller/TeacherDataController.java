@@ -11,12 +11,12 @@ import java.io.IOException;
 import java.util.List;
 import java.util.Map;
 
-//@RestController
+@RestController
 @RequestMapping("/school")
 @CrossOrigin
 public class TeacherDataController {
 
-//    @Autowired
+    @Autowired
     private TeacherDataService service;
 
 

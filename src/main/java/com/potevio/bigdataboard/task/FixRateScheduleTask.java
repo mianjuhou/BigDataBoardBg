@@ -13,7 +13,7 @@ import java.util.Date;
 @EnableScheduling
 public class FixRateScheduleTask {
 
-//    @Autowired
+    @Autowired
     private TeacherDataService service;
 
     @Scheduled(fixedRate = 120000)

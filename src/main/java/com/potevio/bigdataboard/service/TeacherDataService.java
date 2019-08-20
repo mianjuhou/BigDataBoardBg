@@ -10,10 +10,10 @@ import java.math.BigDecimal;
 import java.text.SimpleDateFormat;
 import java.util.*;
 
-//@Service
+@Service
 public class TeacherDataService {
 
-//    @Autowired
+    @Autowired
     private TeacherDataDao dao;
 
     private SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM");
