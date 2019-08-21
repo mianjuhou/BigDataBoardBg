@@ -7,6 +7,7 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 
 import java.util.List;
+import java.util.Map;
 
 public interface MainDataDao extends JpaRepository<MainBean, Integer>, JpaSpecificationExecutor<MainBean> {
 
@@ -94,4 +95,8 @@ public interface MainDataDao extends JpaRepository<MainBean, Integer>, JpaSpecif
      */
     @Query(value = "select proTitleId,gender,count(id) from cus_user where find_in_set('1',roles) group by proTitleId,gender ", nativeQuery = true)
     List<Object[]> findTeacherTitleNum();
+
+    @Query(value = "select proTitleId,gender,count(id) num from cus_user where find_in_set('1',roles) group by proTitleId,gender ",
+            nativeQuery = true)
+    List<Map<String, Object>> findMapQuery();
 }

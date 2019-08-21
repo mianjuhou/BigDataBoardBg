@@ -5,7 +5,6 @@ import com.potevio.bigdataboard.pojo.StudentTeacherNum;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.lang.reflect.Array;
 import java.math.BigInteger;
 import java.util.*;
 
@@ -14,6 +13,7 @@ public class MainDataService {
 
     @Autowired
     private MainDataDao dao;
+
 
     private List<StudentTeacherNum> getSchoolStudnetTecherNumSub(String schoolType) {
         List<Object[]> list1 = dao.findSchoolStudentNum(schoolType);
@@ -191,5 +191,15 @@ public class MainDataService {
             map.get("总体")[i] = map.get("男")[i] + map.get("女")[i];
         }
         return map;
+    }
+
+    public void findMapQuery() {
+        List<Map<String, Object>> list = dao.findMapQuery();
+        list.forEach(map -> {
+            byte proTitleId = (byte) map.get("职称");
+            String gender = (String) map.get("性别");
+            int num = ((BigInteger) map.get("数量")).intValue();
+            System.out.println(proTitleId + gender + num);
+        });
     }
 }

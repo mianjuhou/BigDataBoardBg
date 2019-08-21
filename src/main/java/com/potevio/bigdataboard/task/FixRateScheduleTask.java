@@ -9,14 +9,14 @@ import org.springframework.stereotype.Component;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-//@Component
+@Component
 @EnableScheduling
 public class FixRateScheduleTask {
 
     @Autowired
     private TeacherDataService service;
 
-    @Scheduled(fixedRate = 120000)
+    @Scheduled(fixedRate = 300000)
     private void configureTasks() {
         for (int i = 1; i <= 11; i++) {
             service.syncFunc(i);

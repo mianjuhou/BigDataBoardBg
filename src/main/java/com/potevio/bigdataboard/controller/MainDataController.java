@@ -88,5 +88,11 @@ public class MainDataController {
         return new Result(true, StatusCode.OK, "获取各职称老师数量成功", map);
     }
 
+    @GetMapping("/mapquery")
+    public Result findMapQuery(){
+        service.findMapQuery();
+        return new Result(true, StatusCode.OK, "获取各职称老师数量成功");
+    }
+
 }
 

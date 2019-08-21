@@ -2,15 +2,11 @@ package com.potevio.bigdataboard.pojo;
 
 import lombok.Data;
 
+import java.math.BigInteger;
+
 @Data
 public class QueryResult {
-
-    private String name;
-
-    private Long num1;
-
-    private Long num2;
-
-    private Long num3;
-
+    private byte proTitleId;
+    private String gender;
+    private BigInteger num;
 }
